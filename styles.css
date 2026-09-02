@@ -298,10 +298,6 @@ section {
 .cert-arrow { color: var(--text-muted); flex-shrink: 0; transition: transform 0.2s ease, color 0.2s ease; }
 .cert-card:hover .cert-arrow { transform: translate(2px, -2px); color: var(--text); }
 
-.experience-header h4 { font-size: 1.1rem; font-weight: 700; }
-
-
-
 /* ============ ABOUT ============ */
 .about-text { max-width: 740px; color: var(--text-muted); font-size: 1.16rem; line-height: 1.85; margin-bottom: 36px; }
 .resume-link { font-weight: 600; border-bottom: 2px solid var(--peach); padding-bottom: 4px; transition: all 0.2s ease; }
