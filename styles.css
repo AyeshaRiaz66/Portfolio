@@ -360,3 +360,104 @@ a:focus-visible, .btn:focus-visible, .tilt-card:focus-within, .nav-toggle:focus-
 
   .to-top { bottom: 20px; right: 20px; width: 44px; height: 44px; }
 }
+
+/* ============================================================
+   ADDITIONAL RESPONSIVE HARDENING — covers all device sizes
+   (large desktop, laptop, tablet, phone, landscape, foldables)
+   Nothing above this line was changed.
+   ============================================================ */
+
+/* Safety net: nothing can force horizontal scroll */
+html, body { max-width: 100%; }
+img, svg, video { max-width: 100%; height: auto; }
+* { min-width: 0; }
+
+/* Large desktop / ultra-wide */
+@media (min-width: 1440px) {
+  :root { --max-width: 1240px; }
+  .hero-title { font-size: clamp(3.4rem, 5.5vw, 5.4rem); }
+  .hero-sub { font-size: 1.3rem; }
+}
+
+/* Small laptop / large tablet landscape */
+@media (max-width: 1024px) {
+  section { padding: 110px 24px; }
+  .nav-links { gap: 28px; }
+  .project-grid { gap: 24px; }
+}
+
+/* Tablet portrait */
+@media (max-width: 900px) {
+  .project-grid { grid-template-columns: 1fr; }
+  .hero { min-height: 70vh; }
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: clamp(2.1rem, 8vw, 3.2rem); }
+  .hero-sub { font-size: 1.05rem; }
+  .section-title { font-size: clamp(1.7rem, 6vw, 2.3rem); margin-bottom: 40px; }
+  .tilt-card { padding: 26px; }
+  .more-projects-grid, .cert-grid, .skills-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+}
+
+/* Phone portrait */
+@media (max-width: 600px) {
+  section { padding: 70px 18px; }
+  .nav { padding: 16px 18px; }
+  .nav-logo { font-size: 1.15rem; }
+  .hero-title { font-size: clamp(1.9rem, 9vw, 2.6rem); letter-spacing: -0.02em; }
+  .hero-sub { font-size: 1rem; max-width: 100%; }
+  .hero-actions { flex-direction: column; align-items: stretch; gap: 14px; }
+  .hero-actions .btn { text-align: center; }
+  .hero-stats { gap: 28px; margin-top: 48px; }
+  .stat-number { font-size: 2rem; }
+
+  .project-grid, .more-projects-grid, .cert-grid, .skills-grid { grid-template-columns: 1fr; gap: 18px; }
+
+  .tilt-card { padding: 22px; }
+  .project-card h3, .tilt-card h3 { font-size: 1.3rem; }
+  .project-tag-row { gap: 8px; margin-bottom: 16px; }
+  .tag { font-size: 0.68rem; padding: 5px 12px; }
+  .project-footer-links { justify-content: flex-start; }
+
+  .cert-card { padding: 18px; flex-wrap: wrap; }
+  .cert-info h4 { font-size: 0.94rem; }
+
+  .pill-row { gap: 8px; }
+  .pill { font-size: 0.82rem; padding: 8px 14px; }
+
+  .about-text { font-size: 1rem; }
+
+  .contact-links { flex-direction: column; align-items: stretch; }
+  .contact-links .btn { text-align: center; }
+  .email-display {
+    display: block; width: 100%; box-sizing: border-box;
+    word-break: break-word; font-size: 0.85rem;
+  }
+
+  .footer { padding: 40px 18px; }
+}
+
+/* Small / foldable phones */
+@media (max-width: 380px) {
+  .hero-title { font-size: 1.7rem; }
+  .section-title { font-size: 1.5rem; }
+  .stat-number { font-size: 1.7rem; }
+  .btn { padding: 14px 22px; font-size: 0.9rem; }
+  .nav-logo { font-size: 1rem; }
+  .tilt-card { padding: 18px; }
+}
+
+/* Phone / short-screen landscape */
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero { min-height: auto; padding-top: 100px; padding-bottom: 40px; }
+  .hero-stats { margin-top: 32px; }
+  section { padding: 60px 24px; }
+}
+
+/* Reduce motion-heavy effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .blob { animation: none; }
+  .cursor-glow { display: none; }
+  .tilt-card { transform: none !important; }
+}
