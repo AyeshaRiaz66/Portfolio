@@ -18,7 +18,7 @@
 <!-- Scroll progress indicator -->
 <div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- Cursor-following glow (desktop only, handled in JS) -->
+<!-- Cursor-following glow -->
 <div class="cursor-glow" id="cursorGlow"></div>
 
 <!-- Ambient parallax blobs -->
@@ -45,7 +45,6 @@
 <div class="nav-scrim" id="navScrim"></div>
 
 <main>
-
   <!-- HERO -->
   <section class="hero" id="home">
     <p class="eyebrow"><span id="typedText"></span><span class="cursor-blink">|</span></p>
@@ -63,13 +62,11 @@
       <a href="#projects" class="btn btn-ghost magnetic">See my work ↓</a>
     </div>
 
-    <!-- Animated stat counters -->
     <div class="hero-stats">
       <div class="stat">
         <span class="stat-number" data-count="6">6</span>
         <span class="stat-label">Projects Built</span>
       </div>
-
       <div class="stat">
         <span class="stat-number" data-count="3">3</span>
         <span class="stat-label">Certifications</span>
@@ -78,18 +75,12 @@
   </section>
 
   <!-- FEATURED PROJECTS -->
-
-      
-     
-  
-  <!-- FEATURED PROJECTS -->
   <section class="projects" id="projects">
     <p class="section-eyebrow">Featured Projects</p>
     <h2 class="section-title">Things I've built, and why they matter</h2>
  
     <div class="project-grid">
- 
-      <!-- PROJECT CARD 1 — Fraud Detection Website -->
+      <!-- PROJECT CARD 1 -->
       <article class="project-card tilt-card">
         <div class="project-tag-row">
           <span class="tag tag-peach">AI / ML</span>
@@ -121,7 +112,7 @@
         </div>
       </article>
  
-      <!-- PROJECT CARD 2 — Face Mood Detector -->
+      <!-- PROJECT CARD 2 -->
       <article class="project-card tilt-card">
         <div class="project-tag-row">
           <span class="tag tag-lilac">Kotlin</span>
@@ -152,87 +143,78 @@
           </a>
         </div>
       </article>
- 
     </div>
-       
-
- 
-    <!-- MORE PROJECTS — compact, secondary tier -->
-   
-      <p class="more-projects-label" align="center">More projects</p>
-      <div class="more-projects-grid">
-
-        <div class="more-card">
-          <div class="more-card-top">
-            <h4>Diabetes Prediction</h4>
-          </div>
-          <p>Improved diabetes-risk prediction accuracy on an existing dataset using XGBoost and LightGBM.</p>
-          <div class="more-card-tags">
-            <span class="tag tag-sky">AI/ML</span>
-          
-          </div>
-          <div class="more-card-footer">
-            <a href="https://github.com/AyeshaRiaz66/Diabetes-Detection" target="_blank" rel="noopener" class="project-github-link">
-              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              GitHub
-            </a>
-          </div>
+     
+    <!-- MORE PROJECTS -->
+    <p class="more-projects-label" style="text-align: center;">More projects</p>
+    <div class="more-projects-grid">
+      <div class="more-card">
+        <div class="more-card-top">
+          <h4>Diabetes Prediction</h4>
         </div>
-
-        <div class="more-card">
-          <div class="more-card-top">
-            <h4>Campus Navigation System</h4>
-          </div>
-          <p>Graph-based routing system computing shortest paths between campus locations using adjacency lists.</p>
-          <div class="more-card-tags">
-            <span class="tag tag-peach">C++</span>
-            <span class="tag tag-mint">Python</span>
-          </div>
-          <div class="more-card-footer">
-            <a href="https://github.com/AyeshaRiaz66/AI-Path-Driven-Campus-Navigation-System" target="_blank" rel="noopener" class="project-github-link">
-              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              GitHub
-            </a>
-          </div>
+        <p>Improved diabetes-risk prediction accuracy on an existing dataset using XGBoost and LightGBM.</p>
+        <div class="more-card-tags">
+          <span class="tag tag-sky">AI/ML</span>
         </div>
-
-        <div class="more-card">
-          <div class="more-card-top">
-            <h4>Student Dashboard</h4>
-          </div>
-          <p>Full-stack dashboard for tracking academic and personal activity, with multi-user data management.</p>
-          <div class="more-card-tags">
-            <span class="tag tag-sky">React</span>
-            <span class="tag tag-lilac">Java</span>
-          </div>
-          <div class="more-card-footer">
-            <a href="https://github.com/AyeshaRiaz66/universe" target="_blank" rel="noopener" class="project-github-link">
-              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              GitHub
-            </a>
-          </div>
+        <div class="more-card-footer">
+          <a href="https://github.com/AyeshaRiaz66/Diabetes-Detection" target="_blank" rel="noopener" class="project-github-link">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            GitHub
+          </a>
         </div>
-        
-
-        <div class="more-card">
-          <div class="more-card-top">
-            <h4>Fruit Classification (AI/ML)</h4>
-          </div>
-          <p>Image classification model for automatic fruit recognition to improve accuracy.</p>
-          <div class="more-card-tags">
-            <span class="tag tag-peach">Python</span>
-            <span class="tag tag-mint">ML</span>
-          </div>
-          <div class="more-card-footer">
-            <a href="https://github.com/AyeshaRiaz66/FruitClassifier-MLP" target="_blank" rel="noopener" class="project-github-link">
-              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-
       </div>
-   
+
+      <div class="more-card">
+        <div class="more-card-top">
+          <h4>Campus Navigation System</h4>
+        </div>
+        <p>Graph-based routing system computing shortest paths between campus locations using adjacency lists.</p>
+        <div class="more-card-tags">
+          <span class="tag tag-peach">C++</span>
+          <span class="tag tag-mint">Python</span>
+        </div>
+        <div class="more-card-footer">
+          <a href="https://github.com/AyeshaRiaz66/AI-Path-Driven-Campus-Navigation-System" target="_blank" rel="noopener" class="project-github-link">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="more-card">
+        <div class="more-card-top">
+          <h4>Student Dashboard</h4>
+        </div>
+        <p>Full-stack dashboard for tracking academic and personal activity, with multi-user data management.</p>
+        <div class="more-card-tags">
+          <span class="tag tag-sky">React</span>
+          <span class="tag tag-lilac">Java</span>
+        </div>
+        <div class="more-card-footer">
+          <a href="https://github.com/AyeshaRiaz66/universe" target="_blank" rel="noopener" class="project-github-link">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="more-card">
+        <div class="more-card-top">
+          <h4>Fruit Classification (AI/ML)</h4>
+        </div>
+        <p>Image classification model for automatic fruit recognition to improve accuracy.</p>
+        <div class="more-card-tags">
+          <span class="tag tag-peach">Python</span>
+          <span class="tag tag-mint">ML</span>
+        </div>
+        <div class="more-card-footer">
+          <a href="https://github.com/AyeshaRiaz66/FruitClassifier-MLP" target="_blank" rel="noopener" class="project-github-link">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- SKILLS -->
@@ -248,19 +230,17 @@
           <span class="pill">PyTorch</span>
           <span class="pill">Scikit-learn</span>
           <span class="pill">Optuna</span>
-      
         </div>
       </div>
       <div class="skill-group">
         <h4>Mobile Infrastructure</h4>
         <div class="pill-row">
           <span class="pill">Flutter</span>
-           <span class="pill">Laravel</span>
+          <span class="pill">Laravel</span>
           <span class="pill">Kotlin</span>
           <span class="pill">Jetpack Compose</span>
           <span class="pill">Android SDK</span>
           <span class="pill">Firebase</span>
-          
         </div>
       </div>
       <div class="skill-group">
@@ -281,7 +261,6 @@
     <h2 class="section-title">Verified credentials</h2>
 
     <div class="cert-grid">
-
       <a href="PYTHON.png" target="_blank" rel="noopener" class="cert-card">
         <div class="cert-icon">
           <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"></path></svg>
@@ -293,7 +272,8 @@
         <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="cert-arrow"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
       </a>
 
-      <a href="kotlin.pdf"_blank" rel="noopener" class="cert-card">
+      <!-- FIXED MISSING QUOTE HERE -->
+      <a href="kotlin.pdf" target="_blank" rel="noopener" class="cert-card">
         <div class="cert-icon">
           <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"></path></svg>
         </div>
@@ -303,7 +283,8 @@
         </div>
         <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="cert-arrow"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
       </a>
-          <a href="certificate AI Fluency.pdf" target="_blank" rel="noopener" class="cert-card">
+
+      <a href="certificate AI Fluency.pdf" target="_blank" rel="noopener" class="cert-card">
         <div class="cert-icon">
           <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"></path></svg>
         </div>
@@ -313,19 +294,15 @@
         </div>
         <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="cert-arrow"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
       </a>
-
-
     </div>
   </section>
 
- <!-- EXPERIENCE -->
+  <!-- EXPERIENCE -->
   <section class="experience" id="experience">
     <p class="section-eyebrow">Experience</p>
     <h2 class="section-title">Where I've worked</h2>
 
     <div class="project-grid">
-
-      <!-- EXPERIENCE CARD 1 -->
       <article class="tilt-card">
         <div class="project-tag-row">
           <span class="tag tag-peach">Internship</span>
@@ -345,7 +322,6 @@
         </div>
       </article>
 
-      <!-- EXPERIENCE CARD 2 -->
       <article class="tilt-card">
         <div class="project-tag-row">
           <span class="tag tag-mint">Volunteer</span>
@@ -361,11 +337,9 @@
           </div>
         </div>
       </article>
-
     </div>
   </section>
 
-    </div>
   <!-- ABOUT -->
   <section class="about" id="about">
     <p class="section-eyebrow">About</p>
@@ -381,7 +355,7 @@
     <p class="section-eyebrow">Contact</p>
     <h2 class="section-title">Let's talk</h2>
     <p class="contact-sub">
-      I am actively seeking a opportunities in Software Engineering, AI development, or Mobile platforms. Reach out directly below.
+      I am actively seeking opportunities in Software Engineering, AI development, or Mobile platforms. Reach out directly below.
     </p>
 
     <div class="contact-links">
@@ -394,7 +368,6 @@
       Direct Email: <a href="mailto:123riazaye@gmail.com" class="email-text-link">123riazaye@gmail.com</a>
     </div>
   </section>
-
 </main>
 
 <footer class="footer">
