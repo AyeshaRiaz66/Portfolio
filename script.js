@@ -80,12 +80,18 @@ if (navLinks) {
         if (targetEl) {
           e.preventDefault();
           closeMobileMenu();
-          setTimeout(() => {
-            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            if (history.pushState) {
-              history.pushState(null, null, href);
-            }
-          }, 10);
+          const navElement = document.getElementById('nav');
+          const navHeight = navElement ? navElement.offsetHeight : 80;
+          const targetPosition = Math.max(0, targetEl.offsetTop - navHeight);
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+
+          if (history.pushState) {
+            history.pushState(null, null, href);
+          }
         } else {
           closeMobileMenu();
         }
