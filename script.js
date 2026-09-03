@@ -1,27 +1,45 @@
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ---------- Scroll progress bar ---------- */
+/* ---------- Scroll progress bar & Back to Top ---------- */
 const scrollProgress = document.getElementById('scrollProgress');
-function updateScrollProgress() {
+const toTopBtn = document.getElementById('toTop');
+
+function handleScroll() {
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
   if (scrollProgress) scrollProgress.style.width = pct + '%';
+
+  if (toTopBtn) {
+    if (scrollTop > 400) {
+      toTopBtn.classList.add('visible');
+    } else {
+      toTopBtn.classList.remove('visible');
+    }
+  }
 }
-window.addEventListener('scroll', updateScrollProgress);
-updateScrollProgress();
+window.addEventListener('scroll', handleScroll);
+handleScroll();
+
+if (toTopBtn) {
+  toTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 /* ---------- Nav shrink on scroll ---------- */
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    nav.style.padding = '16px 48px';
-    nav.style.boxShadow = '0 10px 30px rgba(43,36,56,0.05)';
-  } else {
-    nav.style.padding = '24px 48px';
-    nav.style.boxShadow = 'none';
-  }
-});
+if (nav) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      nav.style.padding = '16px 48px';
+      nav.style.boxShadow = '0 10px 30px rgba(43,36,56,0.05)';
+    } else {
+      nav.style.padding = '24px 48px';
+      nav.style.boxShadow = 'none';
+    }
+  });
+}
 
 /* ---------- Mobile hamburger menu ---------- */
 const navToggle = document.getElementById('navToggle');
@@ -42,15 +60,30 @@ function openMobileMenu() {
   document.body.style.overflow = 'hidden';
 }
 
-if (navToggle && navLinks && navScrim) {
-  navToggle.addEventListener('click', () => {
+function toggleMobileMenu(e) {
+  if (e) e.preventDefault();
+  if (navLinks) {
     navLinks.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
-  });
-  navScrim.addEventListener('click', closeMobileMenu);
-  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
-  window.addEventListener('resize', () => { if (window.innerWidth > 640) closeMobileMenu(); });
+  }
 }
+
+if (navToggle) {
+  navToggle.addEventListener('click', toggleMobileMenu);
+}
+if (navScrim) {
+  navScrim.addEventListener('click', closeMobileMenu);
+}
+if (navLinks) {
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMobileMenu();
+});
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 640) closeMobileMenu();
+});
 
 /* ---------- Typed hero eyebrow line ---------- */
 const typedTarget = document.getElementById('typedText');
