@@ -82,9 +82,13 @@ if (navLinks) {
         const targetEl = document.querySelector(href);
         if (targetEl) {
           e.preventDefault();
-          setTimeout(() => {
-            targetEl.scrollIntoView({ behavior: 'smooth' });
-          }, 50);
+          const navElement = document.getElementById('nav');
+          const navHeight = navElement ? navElement.offsetHeight : 70;
+          const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
         }
       }
     });
@@ -139,3 +143,4 @@ const statObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 statNumbers.forEach(el => statObserver.observe(el));
+
