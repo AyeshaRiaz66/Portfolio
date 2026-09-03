@@ -74,38 +74,14 @@ if (navScrim) {
 if (navLinks) {
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', (e) => {
-      let targetId = link.hash;
-      if (!targetId && link.getAttribute('href')) {
-        const rawHref = link.getAttribute('href');
-        const hashIdx = rawHref.indexOf('#');
-        if (hashIdx !== -1) targetId = rawHref.substring(hashIdx);
-      }
-
-      if (targetId && targetId.startsWith('#') && targetId.length > 1) {
-        const targetEl = document.querySelector(targetId);
-        if (targetEl) {
-          e.preventDefault();
-          closeMobileMenu();
-
-          const navElement = document.getElementById('nav');
-          const navHeight = navElement ? navElement.offsetHeight : 70;
-          const currentScroll = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0;
-          const targetPosition = Math.max(0, targetEl.getBoundingClientRect().top + currentScroll - navHeight);
-
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-
-          if (history.pushState) {
-            history.pushState(null, null, targetId);
-          }
-        } else {
-          closeMobileMenu();
-        }
-      } else {
+      // Allow native browser scrolling! We have 'scroll-behavior: smooth' in CSS.
+      // We just need to close the mobile menu when a link is clicked.
+      
+      // Delay closing slightly. On iOS Safari, immediately removing the nav 
+      // overlay can sometimes cancel the browser's native scroll event.
+      setTimeout(() => {
         closeMobileMenu();
-      }
+      }, 150);
     });
   });
 }
