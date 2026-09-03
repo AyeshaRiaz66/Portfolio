@@ -74,22 +74,31 @@ if (navScrim) {
 if (navLinks) {
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href && href.startsWith('#') && href.length > 1) {
-        const targetEl = document.querySelector(href);
+      let targetId = link.hash;
+      if (!targetId && link.getAttribute('href')) {
+        const rawHref = link.getAttribute('href');
+        const hashIdx = rawHref.indexOf('#');
+        if (hashIdx !== -1) targetId = rawHref.substring(hashIdx);
+      }
+
+      if (targetId && targetId.startsWith('#') && targetId.length > 1) {
+        const targetEl = document.querySelector(targetId);
         if (targetEl) {
           e.preventDefault();
+          closeMobileMenu();
 
-          // 1. Initiate smooth scroll first
-          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const navElement = document.getElementById('nav');
+          const navHeight = navElement ? navElement.offsetHeight : 70;
+          const currentScroll = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0;
+          const targetPosition = Math.max(0, targetEl.getBoundingClientRect().top + currentScroll - navHeight);
 
-          // 2. Close mobile menu drawer after brief delay to avoid WebKit transform touch locking
-          setTimeout(() => {
-            closeMobileMenu();
-          }, 300);
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
 
           if (history.pushState) {
-            history.pushState(null, null, href);
+            history.pushState(null, null, targetId);
           }
         } else {
           closeMobileMenu();
