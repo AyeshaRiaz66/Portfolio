@@ -75,7 +75,19 @@ if (navScrim) {
 }
 if (navLinks) {
   navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMobileMenu);
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      closeMobileMenu();
+      if (href && href.startsWith('#') && href.length > 1) {
+        const targetEl = document.querySelector(href);
+        if (targetEl) {
+          e.preventDefault();
+          setTimeout(() => {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }, 50);
+        }
+      }
+    });
   });
 }
 document.addEventListener('keydown', (e) => {

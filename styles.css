@@ -320,9 +320,8 @@ a:focus-visible, .btn:focus-visible, .tilt-card:focus-within, .nav-toggle:focus-
     right: 0; 
     height: 100vh; 
     width: min(78vw, 320px);
-    background: rgba(255, 249, 244, 0.98); 
-    backdrop-filter: blur(24px); 
-    -webkit-backdrop-filter: blur(24px);
+    background: var(--bg); 
+    box-shadow: -10px 0 30px rgba(43,36,56,0.08);
     flex-direction: column; 
     align-items: flex-start; 
     justify-content: center; 
@@ -342,7 +341,7 @@ a:focus-visible, .btn:focus-visible, .tilt-card:focus-within, .nav-toggle:focus-
     display: none; 
     position: fixed; 
     inset: 0; 
-    background: rgba(43,36,56,0.25); 
+    background: transparent; 
     z-index: 104; 
   }
   .nav-scrim.open { display: block; }
@@ -390,3 +389,4 @@ a:focus-visible, .btn:focus-visible, .tilt-card:focus-within, .nav-toggle:focus-
   .cursor-glow { display: none; }
   .tilt-card { transform: none !important; }
 }
+
