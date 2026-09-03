@@ -50,14 +50,12 @@ function closeMobileMenu() {
   if (navLinks) navLinks.classList.remove('open');
   if (navScrim) navScrim.classList.remove('open');
   if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
 }
 
 function openMobileMenu() {
   if (navLinks) navLinks.classList.add('open');
   if (navScrim) navScrim.classList.add('open');
   if (navToggle) navToggle.setAttribute('aria-expanded', 'true');
-  document.body.style.overflow = 'hidden';
 }
 
 function toggleMobileMenu(e) {
@@ -84,7 +82,9 @@ if (navLinks) {
           e.preventDefault();
           const navElement = document.getElementById('nav');
           const navHeight = navElement ? navElement.offsetHeight : 70;
-          const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight;
+          const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const targetPosition = targetEl.getBoundingClientRect().top + currentScrollTop - navHeight;
+          
           window.scrollTo({
             top: targetPosition,
             behavior: 'smooth'
