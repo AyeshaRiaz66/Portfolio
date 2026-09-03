@@ -79,14 +79,15 @@ if (navLinks) {
         const targetEl = document.querySelector(href);
         if (targetEl) {
           e.preventDefault();
-          closeMobileMenu();
           const navElement = document.getElementById('nav');
           const navHeight = navElement ? navElement.offsetHeight : 80;
-          const targetPosition = Math.max(0, targetEl.offsetTop - navHeight);
+          const targetPosition = Math.max(0, targetEl.getBoundingClientRect().top + (window.pageYOffset || window.scrollY || document.documentElement.scrollTop) - navHeight);
+
+          closeMobileMenu();
 
           window.scrollTo({
             top: targetPosition,
-            behavior: 'smooth'
+            behavior: 'auto'
           });
 
           if (history.pushState) {
