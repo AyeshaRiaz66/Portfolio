@@ -79,16 +79,14 @@ if (navLinks) {
         const targetEl = document.querySelector(href);
         if (targetEl) {
           e.preventDefault();
-          const navElement = document.getElementById('nav');
-          const navHeight = navElement ? navElement.offsetHeight : 80;
-          const targetPosition = Math.max(0, targetEl.getBoundingClientRect().top + (window.pageYOffset || window.scrollY || document.documentElement.scrollTop) - navHeight);
 
-          closeMobileMenu();
+          // 1. Initiate smooth scroll first
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'auto'
-          });
+          // 2. Close mobile menu drawer after brief delay to avoid WebKit transform touch locking
+          setTimeout(() => {
+            closeMobileMenu();
+          }, 300);
 
           if (history.pushState) {
             history.pushState(null, null, href);
