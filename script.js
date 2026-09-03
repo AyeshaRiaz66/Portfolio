@@ -79,21 +79,13 @@ if (navLinks) {
         const targetEl = document.querySelector(href);
         if (targetEl) {
           e.preventDefault();
-          const navElement = document.getElementById('nav');
-          const navHeight = navElement ? navElement.offsetHeight : 70;
-          const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          const targetPosition = targetEl.getBoundingClientRect().top + currentScrollTop - navHeight;
-
           closeMobileMenu();
-
-          window.scrollTo({
-            top: Math.max(0, targetPosition),
-            behavior: 'smooth'
-          });
-
-          if (history.pushState) {
-            history.pushState(null, null, href);
-          }
+          setTimeout(() => {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (history.pushState) {
+              history.pushState(null, null, href);
+            }
+          }, 10);
         } else {
           closeMobileMenu();
         }

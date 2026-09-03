@@ -312,6 +312,7 @@ a:focus-visible, .btn:focus-visible, .tilt-card:focus-within, .nav-toggle:focus-
 }
 
 @media (max-width: 640px) {
+  .nav { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(255, 249, 244, 0.98); }
   .nav-toggle { display: flex; }
   
   .nav-links {
